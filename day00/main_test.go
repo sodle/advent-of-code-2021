@@ -6,7 +6,7 @@ import (
 )
 
 func TestPart1(t *testing.T) {
-	input := shared.ReadLinesFromFile("../test_input.txt")
+	input := shared.ReadLinesFromFile("test_input.txt")
 
 	want := 5
 	got := Part1(input)
@@ -17,7 +17,7 @@ func TestPart1(t *testing.T) {
 }
 
 func TestPart2(t *testing.T) {
-	input := shared.ReadNumberFile("../test_input.txt")
+	input := shared.ReadNumberFile("test_input.txt")
 
 	want := 15
 	got := Part2(input)
