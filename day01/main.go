@@ -21,21 +21,18 @@ func Part1(depths []int) int {
 }
 
 func Part2(depths []int) int {
-	var windowSums []int
 	depthIncreases := 0
+	lastWindowSum := math.MaxInt
 
 	for i, depth := range depths {
 		if i >= 2 {
-			windowSum := depth + depths[i-1] + depths[i-2]
+			windowSum := depth + depths[i - 1] + depths[i - 2]
 
-			countPreviousSums := len(windowSums)
-			if countPreviousSums > 0 {
-				if windowSum > windowSums[countPreviousSums-1] {
-					depthIncreases++
-				}
+			if windowSum > lastWindowSum {
+				depthIncreases++
 			}
 
-			windowSums = append(windowSums, windowSum)
+			lastWindowSum = windowSum
 		}
 	}
 	return depthIncreases
