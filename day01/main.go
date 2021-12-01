@@ -3,17 +3,20 @@ package main
 import (
 	"aoc2021/shared"
 	"log"
+	"math"
 )
 
 func Part1(depths []int) int {
 	depthIncreases := 0
-	for i, depth := range depths {
-		if i > 0 {
-			if depth > depths[i - 1] {
-				depthIncreases++
-			}
+	lastDepth := math.MaxInt
+
+	for _, depth := range depths {
+		if depth > lastDepth {
+			depthIncreases++
 		}
+		lastDepth = depth
 	}
+
 	return depthIncreases
 }
 
