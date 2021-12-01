@@ -50,3 +50,15 @@ func TestReadNumberFile(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkReadLinesFromFile(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		ReadLinesFromFile("testdata/numbers.txt")
+	}
+}
+
+func BenchmarkReadNumberFile(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		ReadNumberFile("testdata/numbers.txt")
+	}
+}
