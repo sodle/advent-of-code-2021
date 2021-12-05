@@ -1,4 +1,4 @@
-package shared
+package main
 
 import "testing"
 
@@ -11,7 +11,7 @@ func TestReadVectorsFromFile(t *testing.T) {
 		{0, 8},
 		{2, 0},
 	}
-	got := ReadVectorsFromFile("testdata/vectors.txt")
+	got := ReadVectorsFromFile("test_input.txt")
 
 	if len(got) != len(want) {
 		t.Errorf("vectors.txt length incorrect, got: %d, want: %d", len(got), len(want))
@@ -25,6 +25,6 @@ func TestReadVectorsFromFile(t *testing.T) {
 
 func BenchmarkReadVectorsFromFile(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		ReadVectorsFromFile("testdata/vectors.txt")
+		ReadVectorsFromFile("test_input.txt")
 	}
 }

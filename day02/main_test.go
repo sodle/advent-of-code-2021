@@ -1,12 +1,11 @@
 package main
 
 import (
-	"aoc2021/shared"
 	"testing"
 )
 
 func TestPart1(t *testing.T) {
-	input := shared.ReadVectorsFromFile("test_input.txt")
+	input := ReadVectorsFromFile("test_input.txt")
 
 	want := 150
 	got := Part1(input)
@@ -17,7 +16,7 @@ func TestPart1(t *testing.T) {
 }
 
 func TestPart2(t *testing.T) {
-	input := shared.ReadVectorsFromFile("test_input.txt")
+	input := ReadVectorsFromFile("test_input.txt")
 
 	want := 900
 	got := Part2(input)
@@ -28,7 +27,7 @@ func TestPart2(t *testing.T) {
 }
 
 func BenchmarkPart1(b *testing.B) {
-	input := shared.ReadVectorsFromFile("input.txt")
+	input := ReadVectorsFromFile("input.txt")
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		Part1(input)
@@ -36,7 +35,7 @@ func BenchmarkPart1(b *testing.B) {
 }
 
 func BenchmarkPart2(b *testing.B) {
-	input := shared.ReadVectorsFromFile("input.txt")
+	input := ReadVectorsFromFile("input.txt")
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		Part2(input)

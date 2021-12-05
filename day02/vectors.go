@@ -1,6 +1,7 @@
-package shared
+package main
 
 import (
+	"aoc2021/shared"
 	"strconv"
 	"strings"
 )
@@ -39,7 +40,7 @@ func down(magnitude int) Vector {
 }
 
 func ReadVectorsFromFile(path string) (out []Vector) {
-	lines := ReadLinesFromFile(path)
+	lines := shared.ReadLinesFromFile(path)
 	for _, line := range lines {
 		tokens := strings.Split(line, " ")
 		direction := tokens[0]
