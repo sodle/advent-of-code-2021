@@ -1,11 +1,10 @@
 package main
 
 import (
-	"aoc2021/shared"
 	"log"
 )
 
-func Part1(vectors []shared.Vector) int {
+func Part1(vectors []Vector) int {
 	x := 0
 	y := 0
 
@@ -17,7 +16,7 @@ func Part1(vectors []shared.Vector) int {
 	return x * y
 }
 
-func Part2(vectors []shared.Vector) int {
+func Part2(vectors []Vector) int {
 	x := 0
 	y := 0
 	aim := 0
@@ -33,7 +32,7 @@ func Part2(vectors []shared.Vector) int {
 }
 
 func main() {
-	numbers := shared.ReadVectorsFromFile("day02/input.txt")
+	numbers := ReadVectorsFromFile("day02/input.txt")
 	log.Printf("Part 1: %d\n", Part1(numbers))
 	log.Printf("Part 2: %d\n", Part2(numbers))
 }
