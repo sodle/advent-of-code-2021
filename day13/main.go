@@ -177,7 +177,7 @@ func Part2(lines []string) (out string) {
 }
 
 func main() {
-	numbers := shared.ReadLinesFromFile("day13/test_input.txt")
+	numbers := shared.ReadLinesFromFile("day13/input.txt")
 	log.Printf("Part 1: %d\n", Part1(numbers))
 	log.Printf("Part 2: %s\n", Part2(numbers))
 }
